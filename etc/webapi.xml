@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category  Aks CustomCatalog
+ * @package   Aks_CustomCatalog
+ * @copyright Copyright (c) 2021
+ * @author    Saiyad Asif <akssaiyad@gmail.com>
+ */
+ -->
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+    <route url="/V2/product/getByVPN/:vpn" method="GET">
+        <service class="Aks\CustomCatalog\Api\VpnInterface" method="getVpn"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route url="/V2/product/update" method="PUT">
+        <service class="Aks\CustomCatalog\Api\ProductInterface" method="updateProduct"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+</routes>

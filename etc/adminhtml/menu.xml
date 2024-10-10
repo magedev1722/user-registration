@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category  Aks CustomCatalog
+ * @package   Aks_CustomCatalog
+ * @copyright Copyright (c) 2021
+ * @author    Saiyad Asif <akssaiyad@gmail.com>
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../Backend/etc/menu.xsd">
+    <menu>
+        <add id="aks_customcatalog::items" title="Custom Catalog" module="Aks_CustomCatalog" sortOrder="20" parent="Magento_Catalog::catalog" action="aks_customcatalog/items/" resource="Aks_CustomCatalog::items"/>
+    </menu>
+</config>

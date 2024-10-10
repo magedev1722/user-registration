@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<!--
+/**
+ * @category  Aks CustomCatalog
+ * @package   Aks_CustomCatalog
+ * @copyright Copyright (c) 2021
+ * @author    Saiyad Asif <akssaiyad@gmail.com>
+ */
+ -->
+ 
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="catalog_product_save_after">
+        <observer name="product-save" instance="Aks\CustomCatalog\Observer\Afterproductsave" />
+    </event>
+     <event name="catalog_product_delete_after">
+        <observer name="product-delete" instance="Aks\CustomCatalog\Observer\Afterproductdelete" />
+    </event>
+</config>

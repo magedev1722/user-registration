@@ -1,0 +1,56 @@
+<?php
+/**
+ * @category  Aks CustomCatalog
+ * @package   Aks_CustomCatalog
+ * @copyright Copyright (c) 2021
+ * @author    Saiyad Asif <akssaiyad@gmail.com>
+ */
+
+namespace Aks\CustomCatalog\Observer;
+
+use Magento\Framework\Event\ObserverInterface;
+
+class Afterproductdelete implements ObserverInterface
+{    
+    
+    /**
+     * @var \Magento\Framework\App\Request\DataPersistorInterface
+     */
+    private $dataPersistor;
+
+    /**
+     * @var \Aks\CustomCatalog\Model\CustomCatalog
+     */
+    private $customCatalogModel;
+
+    /**
+     * @param \Magento\Backend\App\Action\Context $context
+     * @param \Aks\CustomCatalog\Model\CustomCatalog
+     * @param \Magento\Framework\App\Request\DataPersistorInterface $dataPersistor
+     */
+    public function __construct(
+        \Magento\Backend\App\Action\Context $context,
+        \Aks\CustomCatalog\Model\CustomCatalog $customCatalogModel,
+        \Magento\Framework\App\Request\DataPersistorInterface $dataPersistor
+    ) {
+        $this->dataPersistor = $dataPersistor;
+        $this->customCatalogModel = $customCatalogModel;
+        parent::__construct($context);
+    }
+
+    public function execute(\Magento\Framework\Event\Observer $observer)
+    {
+        $product = $observer->getProduct();
+        
+		$catalog_model = $this->customCatalogModel->getCollection()->addFieldToFilter('product_id',$product->getId());
+        
+        foreach ($catalog_model as $catalog) {
+            $catalog_id = $catalog->getId();
+        }
+        if (count($catalog_model) > 0 && $catalog_id > 0) {
+            $model = $this->customCatalogModel;
+            $model->load($id);
+            $model->delete();
+        }
+    }   
+}

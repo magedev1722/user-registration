@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<!--
+/**
+ * @category  Aks CustomCatalog
+ * @package   Aks_CustomCatalog
+ * @copyright Copyright (c) 2021
+ * @author    Saiyad Asif <akssaiyad@gmail.com>
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+	<acl>
+		<resources>
+            <resource id="Magento_Backend::admin">
+                
+                <resource id="aks_customcatalog::items" title="Aks CustomCatalog" translate="title" sortOrder="10">
+					
+                </resource>
+            </resource>
+        </resources>
+	</acl>
+</config>
