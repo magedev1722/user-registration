@@ -6,7 +6,7 @@
  * @author    Saiyad Asif <akssaiyad@gmail.com>
  */
 
-namespace Aks\CustomCatalog\Setup;
+namespace lrb\CustomCatalog\Setup;
 
 use Magento\Eav\Setup\EavSetup;
 use Magento\Eav\Setup\EavSetupFactory;
