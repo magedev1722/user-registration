@@ -6,7 +6,7 @@
  * @author    Saiyad Asif <akssaiyad@gmail.com>
  */
 
-namespace Aks\CustomCatalog\Block\Adminhtml;
+namespace Aks\Catalog\Block\Adminhtml;
 
 class Items extends \Magento\Backend\Block\Widget\Grid\Container
 {
