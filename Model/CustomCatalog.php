@@ -17,6 +17,6 @@ class CustomCatalog extends AbstractModel
      */
     protected function _construct()
     {
-        $this->_init('Aks\CustomCatalog\Model\ResourceModel\CustomCatalog');
+        $this->_blog('lrb\CustomCatalog\Model\ResourceModel\CustomCatalog');
     }
 }
